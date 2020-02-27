@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=de5031c9a0ebc0d079b80af0ab474bca1058a340" media="screen" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style.css?v=84df332b32574a19d5d27c5ac1f2923954977713" media="screen" type="text/css">
     <link rel="stylesheet" href="/assets/css/print.css" media="print" type="text/css">
 
     <!--[if lt IE 9]>
@@ -44,7 +44,8 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <p>just goofing around. Software stars.</p>
+          
+<p>Just goofing around. Software stars.</p>
 
 <p>Step 1: google for javascript draw on canvas find https://www.w3schools.com/graphics/canvas_drawing.asp
 copy and paste (see <script></script> below)</p>
@@ -108,11 +109,87 @@ function myTimer() {
 
 </script>
 
+<p>Looking at the text of this page shows how the stars are made inside of a ‘static’ blog page.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">Just</span> <span class="nx">goofing</span> <span class="nx">around</span><span class="p">.</span> <span class="nx">Software</span> <span class="nx">stars</span><span class="p">.</span>
+
+<span class="nx">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="nx">google</span> <span class="k">for</span> <span class="nx">javascript</span> <span class="nx">draw</span> <span class="nx">on</span> <span class="nx">canvas</span> <span class="nx">find</span> <span class="nx">https</span><span class="p">:</span><span class="c1">//www.w3schools.com/graphics/canvas_drawing.asp</span>
+<span class="nx">copy</span> <span class="nx">and</span> <span class="nx">paste</span> <span class="p">(</span><span class="nx">see</span> <span class="o">&lt;</span><span class="nx">script</span><span class="o">/&gt;</span> <span class="nx">below</span><span class="p">)</span>
+
+<span class="mi">2</span><span class="p">:</span> <span class="nx">google</span> <span class="k">for</span> <span class="nx">javascript</span> <span class="nx">timer</span><span class="p">.</span> <span class="kd">get</span> <span class="nx">https</span><span class="p">:</span><span class="c1">//www.w3schools.com/js/js_timing.asp copy the code at the end. Try to remember javascript language.</span>
+
+<span class="mi">3</span><span class="p">:</span> <span class="nx">put</span> <span class="nx">the</span> <span class="nx">draw</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">myTimer</span><span class="p">.</span>
+
+<span class="mi">4</span><span class="p">:</span> <span class="nx">google</span> <span class="k">for</span> <span class="nx">javascript</span> <span class="nx">array</span> <span class="k">of</span> <span class="nx">objects</span><span class="p">.</span> <span class="nx">find</span> <span class="nx">https</span><span class="p">:</span><span class="c1">//www.w3schools.com/js/js_arrays.asp. add stars. </span>
+
+<span class="mi">5</span><span class="p">:</span> <span class="nx">Curse</span> <span class="nx">go</span> <span class="k">for</span> <span class="nx">making</span> <span class="nx">me</span> <span class="nx">always</span> <span class="nx">forget</span> <span class="nx">parens</span> <span class="k">in</span> <span class="k">if</span> <span class="nx">statements</span><span class="p">.</span>
+
+<span class="mi">6</span><span class="p">:</span> <span class="nx">push</span><span class="p">,</span> <span class="kd">get</span> <span class="nx">a</span> <span class="nx">snack</span><span class="p">.</span> 
+
+<span class="o">&lt;</span><span class="nx">canvas</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">myCanvas</span><span class="dl">"</span> <span class="nx">width</span><span class="o">=</span><span class="dl">"</span><span class="s2">512</span><span class="dl">"</span> <span class="nx">height</span><span class="o">=</span><span class="dl">"</span><span class="s2">512</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/canvas</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">myCanvas</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">myVar</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">myTimer</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">stars</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">myTimer</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stars</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+  
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#000000</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">);</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#FFFFFF</span><span class="dl">"</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">1000</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">stars</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">star</span> <span class="o">=</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="na">y</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="na">z</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+            <span class="nx">stars</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">star</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">star</span> <span class="o">=</span> <span class="nx">stars</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+        <span class="nx">xt</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span> <span class="o">/</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">+</span> <span class="mi">256</span>
+        <span class="nx">yt</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span> <span class="o">/</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">+</span> <span class="mi">256</span>
+        <span class="nx">size</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">400</span> <span class="o">/</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">size</span> <span class="o">&gt;=</span> <span class="mf">2.0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">xt</span><span class="o">+</span><span class="nx">size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">yt</span><span class="o">+</span><span class="nx">size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">white</span><span class="dl">'</span><span class="p">;</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span> 
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="nx">xt</span><span class="p">,</span> <span class="nx">yt</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">50000</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">xt</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">xt</span> <span class="o">&gt;=</span> <span class="mi">512</span> <span class="o">||</span> <span class="nx">yt</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">yt</span> <span class="o">&gt;=</span> <span class="mi">512</span> <span class="o">||</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">star</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="nx">star</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">/</span><span class="mi">100</span>
+        <span class="p">}</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="nx">Looking</span> <span class="nx">at</span> <span class="nx">the</span> <span class="nx">text</span> <span class="k">of</span> <span class="k">this</span> <span class="nx">page</span> <span class="nx">shows</span> <span class="nx">how</span> <span class="nx">the</span> <span class="nx">stars</span> <span class="nx">are</span> <span class="nx">made</span> <span class="nx">inside</span> <span class="k">of</span> <span class="nx">a</span> <span class="dl">'</span><span class="s1">static</span><span class="dl">'</span> <span class="nx">blog</span> <span class="nx">page</span><span class="p">.</span> 
+
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">atwheader</span><span class="dl">"</span> <span class="o">&gt;</span>
+<span class="o">-</span> <span class="nx">Alan</span> <span class="nx">Tracey</span> <span class="nx">Wootton</span> <span class="o">-</span>
+<span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+<span class="c">&lt;!--</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">commento</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://cdn.commento.io/js/commento.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt; --</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+
 <div id="atwheader">
 - Alan Tracey Wootton -
 </div>
-
-<!--  5 -->
 
 <!-- <div id="commento"></div>
 <script src="https://cdn.commento.io/js/commento.js"></script> -->
