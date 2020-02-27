@@ -65,7 +65,7 @@ function myTimer() {
 
 Looking at the text of this page shows how the stars are made inside of a 'static' blog page. 
 
-``` javascript
+```javascript
 
 Just goofing around. Software stars.
 
