@@ -14,6 +14,8 @@ copy and paste (see <script/> below)
 
 6: push, get a snack. 
 
+<button type="button" id="stopbutton" >Go</button>
+
 <canvas id="myCanvas" width="512" height="512"></canvas>
 
 <script>
@@ -24,9 +26,12 @@ var myVar = setInterval(myTimer, 10);
 
 var stars = new Array();
 
+var running = false
+
 function myTimer() {
 
-    console.log(stars.length)
+    if ( running == false )
+        return;
   
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 512, 512);
@@ -61,9 +66,16 @@ function myTimer() {
     }
 }
 
+button = document.getElementById('stopbutton');
+function whenClicked(e) {
+    running = ! running
+    console.log("running="+running)
+}
+button.onclick = whenClicked
+
 </script>
 
-Looking at the text of this page shows how the stars are made inside of a 'static' blog page. 
+Looking at the text of this page shows how the stars are made inside of a 'static' blog page:
 
 ```javascript
 
