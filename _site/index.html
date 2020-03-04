@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=84c564be6fea6399c79eb282b7016ba44aaba03d" media="screen" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2277c4009288a11537fa73a9af00f620ac5c2539" media="screen" type="text/css">
     <link rel="stylesheet" href="/assets/css/print.css" media="print" type="text/css">
 
     <!--[if lt IE 9]>
@@ -60,7 +60,7 @@ copy and paste (see <script></script> below)</p>
 
 <p>6: push, get a snack.</p>
 
-<p><button type="button" id="stopbutton">Go</button></p>
+<p><button type="button" id="stopbutton">Go</button> <button type="button" id="sizebutton">Big</button></p>
 
 <canvas id="myCanvas" width="512" height="512"></canvas>
 
@@ -73,6 +73,7 @@ var myVar = setInterval(myTimer, 10);
 var stars = new Array();
 
 var running = false
+var mid = 256
 
 function myTimer() {
 
@@ -80,7 +81,7 @@ function myTimer() {
         return;
   
     ctx.fillStyle = "#000000";
-    ctx.fillRect(0, 0, 512, 512);
+    ctx.fillRect(0, 0, mid*2, mid*2);
     ctx.fillStyle = "#FFFFFF";
 
     for ( i = 0; i < 1000 ; i ++ ){
@@ -89,8 +90,8 @@ function myTimer() {
             stars[i] = star;
         }
         star = stars[i]
-        xt = star.x / star.z + 256
-        yt = star.y / star.z + 256
+        xt = star.x / star.z + mid
+        yt = star.y / star.z + mid
         size = 0.2 + 1/400 / star.z
 
         if (size >= 2.0) {
@@ -104,7 +105,7 @@ function myTimer() {
 
         star.z = star.z - 1/50000
 
-        if (xt < 0 || xt >= 512 || yt < 0 || yt >= 512 || star.z <= 0) {
+        if (xt < 0 || xt >= mid*2 || yt < 0 || yt >= mid*2 || star.z <= 0) {
             star.x = 2*Math.random() - 1
             star.y = 2*Math.random() - 1
             star.z = Math.random()/100
@@ -118,6 +119,13 @@ function whenClicked(e) {
     console.log("running="+running)
 }
 button.onclick = whenClicked
+button = document.getElementById('sizebutton');
+button.onclick = function(e) {
+    canvas.width = 1024
+    canvas.height = 1024
+    mid = 512
+    console.log("big="+mid)
+}
 
 </script>
 
@@ -163,8 +171,8 @@ button.onclick = whenClicked
             <span class="nx">stars</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">star</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="nx">star</span> <span class="o">=</span> <span class="nx">stars</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-        <span class="nx">xt</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span> <span class="o">/</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">+</span> <span class="mi">256</span>
-        <span class="nx">yt</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span> <span class="o">/</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">+</span> <span class="mi">256</span>
+        <span class="nx">xt</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span> <span class="o">/</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">+</span> <span class="nx">mid</span>
+        <span class="nx">yt</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span> <span class="o">/</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span> <span class="o">+</span> <span class="nx">mid</span>
         <span class="nx">size</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">400</span> <span class="o">/</span> <span class="nx">star</span><span class="p">.</span><span class="nx">z</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="nx">size</span> <span class="o">&gt;=</span> <span class="mf">2.0</span><span class="p">)</span> <span class="p">{</span>
@@ -203,8 +211,9 @@ button.onclick = whenClicked
 - Alan Tracey Wootton -
 </div>
 
-<!-- <div id="commento"></div>
-<script src="https://cdn.commento.io/js/commento.js"></script> -->
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+
 
         </section>
 
